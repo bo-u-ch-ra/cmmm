@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Player App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+  <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <header class="app-header">
+    <h1>Video Player</h1>
+    <div class="version-info">
+      <p class="version-number">Version 1.1</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="video-controls">
+      <input
+        type="text"
+        id="videoUrl"
+        class="video-input"
+        placeholder="Enter video URL"
+      />
+      <button class="load-btn" onclick="loadVideo()">Load Video</button>
+      <form class="playback-options">
+        <div class="option">
+          <input type="radio" id="DASH" name="hlsOption" value="dash" />
+          <label for="DASH">DASH</label>
+        </div>
+        <div class="option">
+          <input type="radio" id="HLS" name="hlsOption" value="hls" />
+          <label for="HLS">HLS</label>
+        </div>
+        <div class="option">
+          <input
+            type="radio"
+            id="HTML5"
+            name="hlsOption"
+            value="html5"
+            checked
+          />
+          <label for="HTML5">HTML5</label>
+        </div>
+      </form>
+    </div>
+    <div id="videoPlayer" class="video-player"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

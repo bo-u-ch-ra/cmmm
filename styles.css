@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 30% 70%;
+  align-items: center;
+  justify-items: center;
+}
+
+#videoUrl {
+  padding: 5px;
+  margin: 5px;
+}
+.header {
+  animation: moveInLeft 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+  width:50%;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  padding: 8px;
+  cursor: pointer;
+  background-color: #55c57a;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  flex: 1 1;
+}
+.none{
+  margin: 0;
+  top: 0;
+  left: 0px;
+  position: absolute;
+
+}
+.vjs-big-play-button{
+  top:50% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%) !important;
+}
+.btn:active {
+  transform: translateY(-3px);
+  box-shadow: 0px 3px 10px black;
+}
+@media screen and (max-width: 800px) {
+  #videoPlayer {
+    margin-top: 20px;
+    height: 70% !important;
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 630px) {
+  #videoPlayer {
+    margin-top: 20px;
+    height: 60% !important;
+    width: 90% !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  #videoPlayer {
+    margin-top: 20px;
+    height: 50% !important;
+    width: 90% !important;
+  }
+}
+
+#videoPlayer {
+  margin-top: 20px;
+  height: 480px;
+  width: 800px;
+}
+.video {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+  box-shadow: 2px 3px 27px black;
+  width: 100%;
+  height: 100%;
+}
+.check{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+.input {
+  flex: 1 1;
+  text-align: center;
+  font-size: 15px;
+  font-family: inherit;
+  color: inherit;
+  border-radius: 2px;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  width: 90%;
+  transition: all 0.2s;
+}
+.input:focus-visible {
+  border-color: #ff7730;
+  outline: none;
+}
+.input::placeholder{
+  text-align:center;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
